@@ -90,23 +90,16 @@
             width: 100%;
             height: 190px;
             position: relative;
-            background: #1a1a24;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #16161f;
             border-bottom: 1px solid #262630;
             overflow: hidden;
         }
-
-        .badge-aw { font-size: 1.3rem; font-weight: 900; color: var(--gold); letter-spacing: 2px; }
 
         .card-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            display: block;
         }
 
         .card-body { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -162,11 +155,12 @@
         </div>
 
         <div class="grid">
-            <!-- قسم البخور والمعمول (2,500 ريال) -->
+            <!-- ================= قسم البخور والمعمول (2,500 ريال) ================= -->
+            
+            <!-- 1. معمول كويتي -->
             <div class="card" data-group="bakhoor">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG-20261013-WA0067.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="1.jpg" alt="معمول كويتي" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
@@ -177,10 +171,10 @@
                 </div>
             </div>
 
+            <!-- 2. معمول صنوف -->
             <div class="card" data-group="bakhoor">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG-20261013-WA0068.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="2.jpg" alt="معمول صنوف" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
@@ -191,10 +185,10 @@
                 </div>
             </div>
 
+            <!-- 3. معمول قصة -->
             <div class="card" data-group="bakhoor">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG-20261013-WA0069.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="3.jpg" alt="معمول قصة" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
@@ -205,11 +199,12 @@
                 </div>
             </div>
 
-            <!-- عطور النخبة الفاخرة (VIP) -->
+            <!-- ================= عطور النخبة الفاخرة (VIP) ================= -->
+
+            <!-- 4. هيرش لهب -->
             <div class="card" data-group="vip">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180754.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="4.jpg" alt="هيرش لهب" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">اصدار النخبة الخاص</span>
@@ -220,10 +215,10 @@
                 </div>
             </div>
 
+            <!-- 5. الرهيب -->
             <div class="card" data-group="vip">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180714.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="5.jpg" alt="الرهيب" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">تركيبة ملكية</span>
@@ -234,10 +229,10 @@
                 </div>
             </div>
 
+            <!-- 6. دومينكان -->
             <div class="card" data-group="vip">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180704.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="6.jpg" alt="دومينكان" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">اصدار خاص</span>
@@ -248,10 +243,10 @@
                 </div>
             </div>
 
+            <!-- 7. شاص -->
             <div class="card" data-group="vip">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180604.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="7.jpg" alt="شاص" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">الهيبة والقوة</span>
@@ -262,11 +257,12 @@
                 </div>
             </div>
 
-            <!-- عطور مجموعة 8,000 ريال -->
+            <!-- ================= عطور مجموعة 8,000 ريال ================= -->
+
+            <!-- 8. شهرة -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_22221013_180121.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="8.jpg" alt="شهرة" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">عطر الحضور</span>
@@ -277,10 +273,10 @@
                 </div>
             </div>
 
+            <!-- 9. Now -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_%2026%2010%2011%2018%200%2011%2012.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="9.jpg" alt="Now" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">عصري وجذاب</span>
@@ -291,10 +287,10 @@
                 </div>
             </div>
 
+            <!-- 10. انا الابيض -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_22221013_1802255.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="10.jpg" alt="انا الابيض" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">النظافة والرقي</span>
@@ -305,10 +301,10 @@
                 </div>
             </div>
 
+            <!-- 11. Obsid -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180225.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="11.jpg" alt="Obsid" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">الفخامة والغموض</span>
@@ -319,10 +315,10 @@
                 </div>
             </div>
 
+            <!-- 12. كحيلان -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180246.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="12.jpg" alt="كحيلان" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">الاصالة والهيبة</span>
@@ -333,10 +329,10 @@
                 </div>
             </div>
 
+            <!-- 13. icq -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_22221013_1803335.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="13.jpg" alt="icq" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">من جليد</span>
@@ -347,10 +343,10 @@
                 </div>
             </div>
 
+            <!-- 14. 511 -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_22221013_180352.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="14.jpg" alt="511" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">الاناقة الخاصة</span>
@@ -361,10 +357,10 @@
                 </div>
             </div>
 
+            <!-- 15. الموصوف -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_1804.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="15.jpg" alt="الموصوف" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">عطر شرقي</span>
@@ -375,10 +371,10 @@
                 </div>
             </div>
 
+            <!-- 16. بروفيسور -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180418.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="16.jpg" alt="بروفيسور" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">تركيبة ملكية</span>
@@ -389,10 +385,10 @@
                 </div>
             </div>
 
+            <!-- 17. قصة -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_%20226%201013_%20180437.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="17.jpg" alt="قصة" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">عبير التراث</span>
@@ -403,10 +399,10 @@
                 </div>
             </div>
 
+            <!-- 18. خمره -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180456.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="18.jpg" alt="خمره" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">دفء وجاذبية</span>
@@ -417,10 +413,10 @@
                 </div>
             </div>
 
+            <!-- 19. دخون ليذر -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180514.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="19.jpg" alt="دخون ليذر" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">فخامة الدخون</span>
@@ -431,10 +427,10 @@
                 </div>
             </div>
 
+            <!-- 20. اونلي برايفت -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180527.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="20.jpg" alt="اونلي برايفت" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">نسخة خاصة</span>
@@ -445,10 +441,10 @@
                 </div>
             </div>
 
+            <!-- 21. عساف -->
             <div class="card" data-group="8000">
                 <div class="card-img-wrap">
-                    <span class="badge-aw">AW</span>
-                    <img src="IMG_2261013_180547.jpg" class="card-img" onerror="this.style.display='none'">
+                    <img src="21.jpg" alt="عساف" class="card-img">
                 </div>
                 <div class="card-body">
                     <span class="tag">عسل وعنبر</span>
@@ -466,7 +462,7 @@
         💬 تواصل معنا واتساب
     </a>
 
-    <!-- كود الفلترة -->
+    <!-- كود تبديل الأقسام -->
     <script>
         function filterGroup(group, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
