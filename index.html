@@ -6,7 +6,7 @@
     <title>براند AW | للعطور والبخور الفاخر</title>
     <style>
         :root {
-            --bg-dark: #0a0a0c;
+            --bg-dark: #09090b;
             --card-dark: #141418;
             --gold: #d4af37;
             --gold-light: #f5e7a9;
@@ -18,8 +18,9 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
         body { background: var(--bg-dark); color: var(--text-light); padding-bottom: 95px; }
 
+        /* الهيدر الفخم */
         .hero {
-            background: radial-gradient(circle at center, #22222a 0%, #0a0a0c 100%);
+            background: radial-gradient(circle at center, #24242c 0%, #09090b 100%);
             border-bottom: 2px solid var(--gold);
             padding: 35px 20px 25px;
             text-align: center;
@@ -27,10 +28,10 @@
         }
 
         .brand-logo {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--gold);
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             margin-bottom: 3px;
             text-shadow: 0 0 15px rgba(212,175,55,0.4);
         }
@@ -40,6 +41,7 @@
 
         .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
 
+        /* تبويبات الفلترة */
         .tabs {
             display: flex;
             gap: 8px;
@@ -50,9 +52,9 @@
         .tabs::-webkit-scrollbar { display: none; }
 
         .tab-btn {
-            background: #1a1a20;
+            background: #18181f;
             color: var(--text-muted);
-            border: 1px solid #2a2a34;
+            border: 1px solid #282834;
             padding: 8px 16px;
             border-radius: 30px;
             font-size: 0.82rem;
@@ -68,6 +70,7 @@
             box-shadow: 0 2px 10px rgba(212,175,55,0.3);
         }
 
+        /* شبكة المنتجات */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
@@ -76,7 +79,7 @@
 
         .card {
             background: var(--card-dark);
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
             border: 1px solid #24242c;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
@@ -86,12 +89,30 @@
         }
         .card:hover { border-color: var(--gold); transform: translateY(-3px); }
 
+        /* منطقة الصورة الفخمة البديلة */
+        .card-img-wrap {
+            width: 100%;
+            height: 175px;
+            position: relative;
+            background: radial-gradient(circle at center, #262633 0%, #13131a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #262630;
+            overflow: hidden;
+        }
+
+        .badge-icon { font-size: 2.2rem; margin-bottom: 4px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5)); }
+        .badge-aw { font-size: 1.1rem; font-weight: 900; color: var(--gold); letter-spacing: 2px; }
+
         .card-img {
             width: 100%;
-            height: 180px;
+            height: 100%;
             object-fit: cover;
-            background: #1d1d24;
-            border-bottom: 1px solid #24242c;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .card-body { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -111,6 +132,7 @@
             font-weight: bold;
         }
 
+        /* زر واتساب العائم */
         .wa-float {
             position: fixed;
             bottom: 20px;
@@ -149,7 +171,11 @@
         <div class="grid">
             <!-- قسم البخور والمعمول (2,500 ريال) -->
             <div class="card" data-group="bakhoor">
-                <img src="1000038612.jpg" alt="معمول كويتي" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🪔</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038612.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
                     <div class="name">معمول كويتي</div>
@@ -160,7 +186,11 @@
             </div>
 
             <div class="card" data-group="bakhoor">
-                <img src="1000038611.jpg" alt="معمول صُدَف" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🪔</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038611.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
                     <div class="name">معمول صُدَف</div>
@@ -171,7 +201,11 @@
             </div>
 
             <div class="card" data-group="bakhoor">
-                <img src="1000038610.jpg" alt="معمول قصة" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🪔</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038610.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
                     <div class="name">معمول قصة</div>
@@ -183,7 +217,11 @@
 
             <!-- عطور النخبة الفاخرة (VIP) -->
             <div class="card" data-group="vip">
-                <img src="1000038555.jpg" alt="هيرش لهب" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🔥</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038555.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">إصدار النخبة الخاص</span>
                     <div class="name">هيرش لهب</div>
@@ -194,7 +232,11 @@
             </div>
 
             <div class="card" data-group="vip">
-                <img src="1000038561.jpg" alt="الرهيب" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">👑</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038561.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">تركيبة ملكية</span>
                     <div class="name">الرهيب</div>
@@ -205,7 +247,11 @@
             </div>
 
             <div class="card" data-group="vip">
-                <img src="1000038595.jpg" alt="دومينكان" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">✨</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038595.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">إصدار خاص</span>
                     <div class="name">دومينكان</div>
@@ -216,7 +262,11 @@
             </div>
 
             <div class="card" data-group="vip">
-                <img src="1000038563.jpg" alt="شاص" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🚙</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038563.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">الهيبة والقوة</span>
                     <div class="name">شاص</div>
@@ -228,7 +278,11 @@
 
             <!-- عطور مجموعة 8,000 ريال -->
             <div class="card" data-group="8000">
-                <img src="1000038550.jpg" alt="شهرة" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🌟</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038550.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">عطر الحضور</span>
                     <div class="name">شهرة</div>
@@ -239,7 +293,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038551.jpg" alt="Now" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">💫</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038551.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">عصري وجذاب</span>
                     <div class="name">Now</div>
@@ -250,7 +308,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038557.jpg" alt="أنا الأبيض" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🤍</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038557.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">النظافة والرقي</span>
                     <div class="name">أنا الأبيض</div>
@@ -261,7 +323,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038559.jpg" alt="Obsid" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🖤</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038559.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">الفخامة والغموض</span>
                     <div class="name">Obsid</div>
@@ -272,7 +338,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038565.jpg" alt="كحيلان" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🐎</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038565.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">الأصالة والهيبة</span>
                     <div class="name">كحيلان</div>
@@ -283,7 +353,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038568.jpg" alt="icq" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">❄️</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038568.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">من جليد</span>
                     <div class="name">icq</div>
@@ -294,7 +368,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038570.jpg" alt="511" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">💎</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038570.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">الأناقة الخاصة</span>
                     <div class="name">511</div>
@@ -305,7 +383,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038572.jpg" alt="الموصوف" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🪵</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038572.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">عطر شرقي</span>
                     <div class="name">الموصوف</div>
@@ -316,7 +398,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038578.jpg" alt="بروفيسور" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🌿</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038578.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">تركيبة ملكية</span>
                     <div class="name">بروفيسور</div>
@@ -327,7 +413,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038576.jpg" alt="قصة" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">📜</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038576.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">عبير التراث</span>
                     <div class="name">قصة</div>
@@ -338,7 +428,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038594.jpg" alt="خمره" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🏺</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038594.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">دفء وجاذبية</span>
                     <div class="name">خمره</div>
@@ -349,7 +443,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038602.jpg" alt="دخون ليذر" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🪔</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038602.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">فخامة الدخون</span>
                     <div class="name">دخون ليذر</div>
@@ -360,7 +458,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038597.jpg" alt="اونلي برايفت" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">👑</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038597.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">نسخة خاصة</span>
                     <div class="name">اونلي برايفت</div>
@@ -371,7 +473,11 @@
             </div>
 
             <div class="card" data-group="8000">
-                <img src="1000038574.jpg" alt="عسّاف" class="card-img">
+                <div class="card-img-wrap">
+                    <span class="badge-icon">🍯</span>
+                    <span class="badge-aw">AW</span>
+                    <img src="1000038574.jpg" class="card-img" onerror="this.remove()">
+                </div>
                 <div class="card-body">
                     <span class="tag">عسل وعنبر</span>
                     <div class="name">عسّاف</div>
@@ -388,7 +494,7 @@
         💬 تواصل معنا واتساب
     </a>
 
-    <!-- كود تبديل الأقسام -->
+    <!-- كود التبديل -->
     <script>
         function filterGroup(group, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
