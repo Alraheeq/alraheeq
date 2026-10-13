@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر العطور الفاخرة</title>
+    <style>
+        :root {
+            --bg-dark: #0f0f11;
+            --card-dark: #18181c;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-light: #f0f0f0;
+            --text-muted: #a0a0a5;
+            --wa-green: #25d366;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background: var(--bg-dark); color: var(--text-light); padding-bottom: 95px; }
+        .hero {
+            background: radial-gradient(circle at center, #23232a 0%, #0f0f11 100%);
+            border-bottom: 2px solid var(--gold);
+            padding: 35px 20px 25px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .crown-icon { font-size: 2.2rem; color: var(--gold); margin-bottom: 6px; }
+        .hero h1 { font-size: 1.7rem; color: var(--gold-light); margin-bottom: 6px; }
+        .hero p { color: var(--text-muted); font-size: 0.85rem; }
+        .container { max-width: 750px; margin: 20px auto; padding: 0 15px; }
+        .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; }
+        .tab-btn {
+            background: #202026; color: var(--text-muted); border: 1px solid #333;
+            padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+        }
+        .tab-btn.active, .tab-btn:hover { background: var(--gold); color: #000; border-color: var(--gold); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+        .card {
+            background: var(--card-dark); border-radius: 12px; overflow: hidden;
+            border: 1px solid #282830; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column;
+        }
+        .card img { width: 100%; height: 165px; object-fit: cover; background: #25252b; }
+        .card-body { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
+        .tag { font-size: 0.7rem; color: var(--gold); margin-bottom: 3px; font-weight: bold; }
+        .name { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+        .desc { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; flex-grow: 1; line-height: 1.3; }
+        .price { font-size: 1.1rem; font-weight: bold; color: var(--gold-light); margin-bottom: 10px; }
+        .order-btn {
+            background: linear-gradient(135deg, #d4af37, #b8860b); color: #000;
+            text-align: center; padding: 8px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: bold;
+        }
+        .wa-float {
+            position: fixed; bottom: 20px; left: 20px; background: var(--wa-green);
+            color: #fff; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center;
+            gap: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="crown-icon">👑</div>
+        <h1>دار العطور الملكية</h1>
+        <p>تشكيلة من أفخر العطور الشرقية والفرنسية والمسك</p>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterCategory('all', this)">كل العطور</button>
+            <button class="tab-btn" onclick="filterCategory('men', this)">عطور رجالية</button>
+            <button class="tab-btn" onclick="filterCategory('women', this)">عطور نسائية</button>
+            <button class="tab-btn" onclick="filterCategory('oud', this)">دهن عود وبخور</button>
+        </div>
+
+        <div class="grid">
+            <div class="card" data-cat="men">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500" alt="عطر رجالي">
+                <div class="card-body">
+                    <span class="tag">رجالي فخم</span>
+                    <div class="name">بلاك ليذر الملكي</div>
+                    <div class="desc">رائحة الهيبة والأناقة، مزيج من الجلد والباتشولي.</div>
+                    <div class="price">150 ر.س</div>
+                    <a href="https://wa.me/967781859622?text=السلام%20عليكم،%20أرغب%20بطلب%20عطر%20بلاك%20ليذر%20الملكي" class="order-btn" target="_blank">اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="women">
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500" alt="عطر نسائي">
+                <div class="card-body">
+                    <span class="tag">نسائي ساحر</span>
+                    <div class="name">فانيلا & مسك روز</div>
+                    <div class="desc">عبير الزهور الناعمة والفانيلا الفرنسية الجذابة.</div>
+                    <div class="price">110 ر.س</div>
+                    <a href="https://wa.me/967781859622?text=السلام%20عليكم،%20أرغب%20بطلب%20عطر%20فانيلا%20ومسك%20روز" class="order-btn" target="_blank">اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="oud">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500" alt="عود كمبودي">
+                <div class="card-body">
+                    <span class="tag">شرقي أصيل</span>
+                    <div class="name">مخلط العود الكمبودي</div>
+                    <div class="desc">دهن عود بيور معتق من أندر الغابات بنفحة راقية.</div>
+                    <div class="price">190 ر.س</div>
+                    <a href="https://wa.me/967781859622?text=السلام%20عليكم،%20أرغب%20بطلب%20مخلط%20العود%20الكمبودي" class="order-btn" target="_blank">اطلب الآن</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="women">
+                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500" alt="مسك أبيض">
+                <div class="card-body">
+                    <span class="tag">للجنسين</span>
+                    <div class="name">مسك الختام والحرير</div>
+                    <div class="desc">رائحة النظافة الباردة والمخملية التي تدوم طويلاً.</div>
+                    <div class="price">75 ر.س</div>
+                    <a href="https://wa.me/967781859622?text=السلام%20عليكم،%20أرغب%20بطلب%20مسك%20الختام" class="order-btn" target="_blank">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/967781859622?text=مرحباً،%20أود%20الاستفسار%20عن%20العطور%20المعروضة" class="wa-float" target="_blank">
+        💬 تواصل معنا واتساب
+    </a>
+
+    <script>
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
