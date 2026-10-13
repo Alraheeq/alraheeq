@@ -18,7 +18,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
         body { background: var(--bg-dark); color: var(--text-light); padding-bottom: 95px; }
 
-        /* الهيدر الفخم */
         .hero {
             background: radial-gradient(circle at center, #22222a 0%, #0a0a0c 100%);
             border-bottom: 2px solid var(--gold);
@@ -41,7 +40,6 @@
 
         .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
 
-        /* تبويبات الفلترة */
         .tabs {
             display: flex;
             gap: 8px;
@@ -70,7 +68,6 @@
             box-shadow: 0 2px 10px rgba(212,175,55,0.3);
         }
 
-        /* شبكة المنتجات */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
@@ -89,16 +86,11 @@
         }
         .card:hover { border-color: var(--gold); transform: translateY(-3px); }
 
-        .card-img-placeholder {
+        .card-img {
             width: 100%;
-            height: 160px;
+            height: 180px;
+            object-fit: cover;
             background: #1d1d24;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.8rem;
-            font-weight: bold;
             border-bottom: 1px solid #24242c;
         }
 
@@ -119,7 +111,6 @@
             font-weight: bold;
         }
 
-        /* زر واتساب العائم */
         .wa-float {
             position: fixed;
             bottom: 20px;
@@ -148,7 +139,6 @@
     </div>
 
     <div class="container">
-        <!-- أزرار الأقسام -->
         <div class="tabs">
             <button class="tab-btn active" onclick="filterGroup('all', this)">كل المنتجات (21)</button>
             <button class="tab-btn" onclick="filterGroup('bakhoor', this)">قسم البخور والمعمول (3)</button>
@@ -159,7 +149,7 @@
         <div class="grid">
             <!-- قسم البخور والمعمول (2,500 ريال) -->
             <div class="card" data-group="bakhoor">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038612.jpg" alt="معمول كويتي" class="card-img">
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
                     <div class="name">معمول كويتي</div>
@@ -170,7 +160,7 @@
             </div>
 
             <div class="card" data-group="bakhoor">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038611.jpg" alt="معمول صُدَف" class="card-img">
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
                     <div class="name">معمول صُدَف</div>
@@ -181,7 +171,7 @@
             </div>
 
             <div class="card" data-group="bakhoor">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038610.jpg" alt="معمول قصة" class="card-img">
                 <div class="card-body">
                     <span class="tag">بخور فاخر</span>
                     <div class="name">معمول قصة</div>
@@ -193,7 +183,7 @@
 
             <!-- عطور النخبة الفاخرة (VIP) -->
             <div class="card" data-group="vip">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038555.jpg" alt="هيرش لهب" class="card-img">
                 <div class="card-body">
                     <span class="tag">إصدار النخبة الخاص</span>
                     <div class="name">هيرش لهب</div>
@@ -204,7 +194,7 @@
             </div>
 
             <div class="card" data-group="vip">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038561.jpg" alt="الرهيب" class="card-img">
                 <div class="card-body">
                     <span class="tag">تركيبة ملكية</span>
                     <div class="name">الرهيب</div>
@@ -215,7 +205,7 @@
             </div>
 
             <div class="card" data-group="vip">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038595.jpg" alt="دومينكان" class="card-img">
                 <div class="card-body">
                     <span class="tag">إصدار خاص</span>
                     <div class="name">دومينكان</div>
@@ -226,7 +216,7 @@
             </div>
 
             <div class="card" data-group="vip">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038563.jpg" alt="شاص" class="card-img">
                 <div class="card-body">
                     <span class="tag">الهيبة والقوة</span>
                     <div class="name">شاص</div>
@@ -238,7 +228,7 @@
 
             <!-- عطور مجموعة 8,000 ريال -->
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038550.jpg" alt="شهرة" class="card-img">
                 <div class="card-body">
                     <span class="tag">عطر الحضور</span>
                     <div class="name">شهرة</div>
@@ -249,7 +239,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038551.jpg" alt="Now" class="card-img">
                 <div class="card-body">
                     <span class="tag">عصري وجذاب</span>
                     <div class="name">Now</div>
@@ -260,7 +250,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038557.jpg" alt="أنا الأبيض" class="card-img">
                 <div class="card-body">
                     <span class="tag">النظافة والرقي</span>
                     <div class="name">أنا الأبيض</div>
@@ -271,7 +261,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038559.jpg" alt="Obsid" class="card-img">
                 <div class="card-body">
                     <span class="tag">الفخامة والغموض</span>
                     <div class="name">Obsid</div>
@@ -282,7 +272,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038565.jpg" alt="كحيلان" class="card-img">
                 <div class="card-body">
                     <span class="tag">الأصالة والهيبة</span>
                     <div class="name">كحيلان</div>
@@ -293,7 +283,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038568.jpg" alt="icq" class="card-img">
                 <div class="card-body">
                     <span class="tag">من جليد</span>
                     <div class="name">icq</div>
@@ -304,7 +294,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038570.jpg" alt="511" class="card-img">
                 <div class="card-body">
                     <span class="tag">الأناقة الخاصة</span>
                     <div class="name">511</div>
@@ -315,7 +305,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038572.jpg" alt="الموصوف" class="card-img">
                 <div class="card-body">
                     <span class="tag">عطر شرقي</span>
                     <div class="name">الموصوف</div>
@@ -326,7 +316,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038578.jpg" alt="بروفيسور" class="card-img">
                 <div class="card-body">
                     <span class="tag">تركيبة ملكية</span>
                     <div class="name">بروفيسور</div>
@@ -337,7 +327,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038576.jpg" alt="قصة" class="card-img">
                 <div class="card-body">
                     <span class="tag">عبير التراث</span>
                     <div class="name">قصة</div>
@@ -348,7 +338,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038594.jpg" alt="خمره" class="card-img">
                 <div class="card-body">
                     <span class="tag">دفء وجاذبية</span>
                     <div class="name">خمره</div>
@@ -359,7 +349,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038602.jpg" alt="دخون ليذر" class="card-img">
                 <div class="card-body">
                     <span class="tag">فخامة الدخون</span>
                     <div class="name">دخون ليذر</div>
@@ -370,7 +360,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038597.jpg" alt="اونلي برايفت" class="card-img">
                 <div class="card-body">
                     <span class="tag">نسخة خاصة</span>
                     <div class="name">اونلي برايفت</div>
@@ -381,7 +371,7 @@
             </div>
 
             <div class="card" data-group="8000">
-                <div class="card-img-placeholder">AW</div>
+                <img src="1000038574.jpg" alt="عسّاف" class="card-img">
                 <div class="card-body">
                     <span class="tag">عسل وعنبر</span>
                     <div class="name">عسّاف</div>
