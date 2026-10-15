@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الرحيق للعطور والتجميل والإكسسوارات | فـوة</title>
+    <title>متجر الرحيق | للعطور والتجميل</title>
     <style>
         :root {
-            --bg-dark: #0d0d11;
-            --card-dark: #16161d;
+            --bg-dark: #0d0d12;
+            --card-dark: #16161f;
             --gold: #d4af37;
-            --rose-gold: #e2a792;
+            --rose: #e2a792;
             --text-light: #f5f5f5;
             --text-muted: #9e9ea6;
             --wa-green: #25d366;
@@ -19,9 +18,8 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
         body { background: var(--bg-dark); color: var(--text-light); padding-bottom: 95px; }
 
-        /* الهيدر الفخم */
         .hero {
-            background: radial-gradient(circle at center, #25202b 0%, #0d0d11 100%);
+            background: radial-gradient(circle at center, #26202e 0%, #0d0d12 100%);
             border-bottom: 2px solid var(--gold);
             padding: 30px 20px 20px;
             text-align: center;
@@ -40,13 +38,12 @@
             margin-bottom: 8px;
         }
 
-        .hero h1 { font-size: 1.6rem; color: #fff; margin-bottom: 6px; letter-spacing: 0.5px; }
-        .hero p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 8px; }
-        .location-tag { color: var(--rose-gold); font-size: 0.78rem; font-weight: 600; }
+        .hero h1 { font-size: 1.6rem; color: #fff; margin-bottom: 6px; }
+        .hero p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
+        .location-tag { color: var(--rose); font-size: 0.78rem; font-weight: 600; }
 
         .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
 
-        /* أزرار الأقسام */
         .tabs {
             display: flex;
             gap: 8px;
@@ -75,7 +72,6 @@
             box-shadow: 0 2px 10px rgba(212,175,55,0.3);
         }
 
-        /* شبكة المنتجات */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
@@ -96,7 +92,7 @@
 
         .card-img-wrap {
             width: 100%;
-            height: 185px;
+            height: 190px;
             position: relative;
             background: #1a1a24;
             border-bottom: 1px solid #242430;
@@ -114,10 +110,10 @@
         }
 
         .card-body { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
-        .tag { font-size: 0.7rem; color: var(--rose-gold); margin-bottom: 3px; font-weight: bold; }
+        .tag { font-size: 0.7rem; color: var(--rose); margin-bottom: 3px; font-weight: bold; }
         .name { font-size: 0.98rem; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.3; }
         .desc { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; flex-grow: 1; line-height: 1.35; }
-        .price { font-size: 0.85rem; font-weight: bold; color: var(--gold); margin-bottom: 10px; }
+        .price { font-size: 1.15rem; font-weight: bold; color: var(--gold); margin-bottom: 10px; }
 
         .order-btn {
             background: linear-gradient(135deg, #d4af37, #b8860b);
@@ -130,7 +126,6 @@
             font-weight: bold;
         }
 
-        /* شريط معلومات المحل وزر واتساب */
         .wa-float {
             position: fixed;
             bottom: 20px;
@@ -153,16 +148,15 @@
 <body>
 
     <div class="hero">
-        <div class="hero-badge">المتجر الإلكتروني المعتمد</div>
+        <div class="hero-badge">معاينة المتجر الإلكتروني</div>
         <h1>الرحيق للعطور والتجميل</h1>
         <p>عطور أصلية، أدوات تجميل، عناية بالبشرة والشعر، وإكسسوارات</p>
         <div class="location-tag">📍 المكلا - فـوة، المساكن (الشارع الثاني)</div>
     </div>
 
     <div class="container">
-        <!-- أزرار الأقسام -->
         <div class="tabs">
-            <button class="tab-btn active" onclick="filterCategory('all', this)">كل المعروضات (6)</button>
+            <button class="tab-btn active" onclick="filterCategory('all', this)">كل المنتجات (6)</button>
             <button class="tab-btn" onclick="filterCategory('perfumes', this)">عطور فاخرة</button>
             <button class="tab-btn" onclick="filterCategory('skin', this)">عناية بالبشرة</button>
             <button class="tab-btn" onclick="filterCategory('hair', this)">عناية بالشعر</button>
@@ -173,96 +167,105 @@
             <!-- 1. واقي شمس دياموند بيوتي -->
             <div class="card" data-cat="skin">
                 <div class="card-img-wrap">
-                    <img src="p1.jpg" alt="واقي شمس دياموند بيوتي" class="card-img" onerror="this.style.display='none'">
+                    <img src="p1.jpg" alt="واقي شمس دياموند بيوتي" class="card-img" onerror="tryNext(this, ['p1.jpeg', 'p1.png', 'p1.jpg.jpg'])">
                 </div>
                 <div class="card-body">
                     <span class="tag">حماية البشرة</span>
                     <div class="name">واقي شمس دياموند بيوتي SPF 50+</div>
-                    <div class="desc">جل كريم حماية فائقة من الشمس، مضاد للمعان ومناسب للبشرة الحساسة مع لمسة جافة.</div>
-                    <div class="price">متوفر في المحل</div>
-                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20سعر%20واقي%20شمس%20دياموند%20بيوتي" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                    <div class="desc">جل كريم حماية فائقة من الشمس، مضاد للمعان ومناسب للبشرة الحساسة.</div>
+                    <div class="price">4,500 ر.ي</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بطلب%20واقي%20شمس%20دياموند%20بيوتي%20بسعر%204500%20ريال" class="order-btn" target="_blank">اطلب عبر واتساب</a>
                 </div>
             </div>
 
             <!-- 2. عطر سديم -->
             <div class="card" data-cat="perfumes">
                 <div class="card-img-wrap">
-                    <img src="p2.jpg" alt="عطر سديم" class="card-img" onerror="this.style.display='none'">
+                    <img src="p2.jpg" alt="عطر سديم" class="card-img" onerror="tryNext(this, ['p2.jpeg', 'p2.png', 'p2.jpg.jpg'])">
                 </div>
                 <div class="card-body">
                     <span class="tag">عطور فاخرة</span>
                     <div class="name">عطر سديم الملكي (Sadeem)</div>
-                    <div class="desc">عطر مركز فاخر خالي من الكحول في زجاجة ملكية مذهبة وأنيقة مع علبة فخمة للإهداء.</div>
-                    <div class="price">متوفر في المحل</div>
-                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20سعر%20عطر%20سديم" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                    <div class="desc">عطر مركز فاخر خالي من الكحول في زجاجة ملكية مذهبة وأنيقة مع علبة فخمة.</div>
+                    <div class="price">12,000 ر.ي</div>
+                    <a href="https://wa.me/967779920171?text=السلام%20عليكم،%20ارغب%20بطلب%20عطر%20سديم%20الملكي%20بسعر%2012000%20ريال" class="order-btn" target="_blank">اطلب عبر واتساب</a>
                 </div>
             </div>
 
             <!-- 3. لوشن يوسيرين -->
             <div class="card" data-cat="skin">
                 <div class="card-img-wrap">
-                    <img src="p3.jpg" alt="لوشن يوسيرين" class="card-img" onerror="this.style.display='none'">
+                    <img src="p3.jpg" alt="لوشن يوسيرين" class="card-img" onerror="tryNext(this, ['p3.jpeg', 'p3.png', 'p3.jpg.jpg'])">
                 </div>
                 <div class="card-body">
                     <span class="tag">ترطيب طبي</span>
                     <div class="name">لوشن يوسيرين للخشونة 500ml</div>
-                    <div class="desc">لوشن Eucerin الأصلي الغني باليوريا والسيراميد لتنعيم وتخفيف خشونة وجفاف البشرة بعمق.</div>
-                    <div class="price">متوفر في المحل</div>
-                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20لوشن%20يوسيرين%20الاصلي" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                    <div class="desc">لوشن Eucerin الأصلي الغني باليوريا والسيراميد لتنعيم وتخفيف خشونة البشرة بعمق.</div>
+                    <div class="price">8,500 ر.ي</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بطلب%20لوشن%20يوسيرين%20الاصلي%20بسعر%208500%20ريال" class="order-btn" target="_blank">اطلب عبر واتساب</a>
                 </div>
             </div>
 
             <!-- 4. معالج سورالي -->
             <div class="card" data-cat="hair">
                 <div class="card-img-wrap">
-                    <img src="p4.jpg" alt="بروتين سورالي" class="card-img" onerror="this.style.display='none'">
+                    <img src="p4.jpg" alt="بروتين سورالي" class="card-img" onerror="tryNext(this, ['p4.jpeg', 'p4.png', 'p4.jpg.jpg'])">
                 </div>
                 <div class="card-body">
                     <span class="tag">معالجات الشعر</span>
                     <div class="name">ثيرابي ليس سورالي 4 في 1 البرازيلي</div>
-                    <div class="desc">ماسك ومعالج احترافي لإصلاح وفرد الشعر وإزالة النفشة غني بزيت المكاديميا والبانثينول.</div>
-                    <div class="price">متوفر (1 كجم / 150 جم)</div>
-                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20ثيرابي%20ليس%20سورالي" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                    <div class="desc">ماسك ومعالج احترافي لفرد الشعر وإزالة النفشة غني بالمكاديميا والبانثينول.</div>
+                    <div class="price">18,000 ر.ي</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بطلب%20ثيرابي%20ليس%20سورالي%20بسعر%2018000%20ريال" class="order-btn" target="_blank">اطلب عبر واتساب</a>
                 </div>
             </div>
 
             <!-- 5. زيوت ناو -->
             <div class="card" data-cat="oils">
                 <div class="card-img-wrap">
-                    <img src="p5.jpg" alt="زيوت ناو" class="card-img" onerror="this.style.display='none'">
+                    <img src="p5.jpg" alt="زيوت ناو" class="card-img" onerror="tryNext(this, ['p5.jpeg', 'p5.png', 'p5.jpg.jpg'])">
                 </div>
                 <div class="card-body">
                     <span class="tag">زيوت طبيعية 100%</span>
                     <div class="name">مجموعة زيوت ناو الأمريكية (NOW)</div>
-                    <div class="desc">زيوت طبيعية نقية للعناية بالبشرة والشعر (زيت الورد، اللوز الحلو، جوز الهند، واللوز المر).</div>
-                    <div class="price">متوفر في المحل</div>
-                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20زيوت%20ناو%20الطبيعية" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                    <div class="desc">زيوت طبيعية نقية للعناية بالبشرة والشعر (ورد، لوز حلو، جوز هند، ولوز مر).</div>
+                    <div class="price">3,500 ر.ي</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بطلب%20زيوت%20ناو%20الامريكية%20بسعر%203500%20ريال" class="order-btn" target="_blank">اطلب عبر واتساب</a>
                 </div>
             </div>
 
             <!-- 6. مثبت شاين فليكس -->
             <div class="card" data-cat="hair">
                 <div class="card-img-wrap">
-                    <img src="p6.jpg" alt="مثبت شاين فليكس" class="card-img" onerror="this.style.display='none'">
+                    <img src="p6.jpg" alt="مثبت شاين فليكس" class="card-img" onerror="tryNext(this, ['p6.jpeg', 'p6.png', 'p6.jpg.jpg'])">
                 </div>
                 <div class="card-body">
                     <span class="tag">تصفيف الشعر</span>
                     <div class="name">مثبت الشعر الذهبي شاين فليكس</div>
-                    <div class="desc">سبراي Shineflex قوي لتثبيت التسريحات ومنح الشعر حجماً ولمعاناً ثابتاً يدوم طوال اليوم.</div>
-                    <div class="price">متوفر في المحل</div>
-                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20مثبت%20شاين%20فليكس" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                    <div class="desc">سبراي Shineflex قوي لتثبيت التسريحات ومنح الشعر حجماً ولمعاناً ثابتاً طوال اليوم.</div>
+                    <div class="price">2,500 ر.ي</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بطلب%20مثبت%20شاين%20فليكس%20بسعر%202500%20ريال" class="order-btn" target="_blank">اطلب عبر واتساب</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- زر واتساب المحل الرسمي -->
+    <!-- زر واتساب المحل -->
     <a href="https://wa.me/967781666239?text=مرحباً،%20تواصلت%20معكم%20عبر%20المتجر%20الإلكتروني%20لمحل%20الرحيق" class="wa-float" target="_blank">
         💬 تواصل مع المحل واتساب
     </a>
 
-    <!-- كود التبديل بين الأقسام -->
     <script>
+        function tryNext(img, exts) {
+            let tried = parseInt(img.getAttribute('data-idx') || '0');
+            if (tried < exts.length) {
+                img.setAttribute('data-idx', (tried + 1).toString());
+                img.src = exts[tried];
+            } else {
+                img.style.display = 'none';
+            }
+        }
+
         function filterCategory(cat, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
