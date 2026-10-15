@@ -1,1 +1,282 @@
-الموقع مغلق
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرحيق للعطور والتجميل والإكسسوارات | فـوة</title>
+    <style>
+        :root {
+            --bg-dark: #0d0d11;
+            --card-dark: #16161d;
+            --gold: #d4af37;
+            --rose-gold: #e2a792;
+            --text-light: #f5f5f5;
+            --text-muted: #9e9ea6;
+            --wa-green: #25d366;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background: var(--bg-dark); color: var(--text-light); padding-bottom: 95px; }
+
+        /* الهيدر الفخم */
+        .hero {
+            background: radial-gradient(circle at center, #25202b 0%, #0d0d11 100%);
+            border-bottom: 2px solid var(--gold);
+            padding: 30px 20px 20px;
+            text-align: center;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.8);
+        }
+
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 { font-size: 1.6rem; color: #fff; margin-bottom: 6px; letter-spacing: 0.5px; }
+        .hero p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 8px; }
+        .location-tag { color: var(--rose-gold); font-size: 0.78rem; font-weight: 600; }
+
+        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
+
+        /* أزرار الأقسام */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+            scrollbar-width: none;
+        }
+        .tabs::-webkit-scrollbar { display: none; }
+
+        .tab-btn {
+            background: #1c1c24;
+            color: var(--text-muted);
+            border: 1px solid #2b2b38;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.2s;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            box-shadow: 0 2px 10px rgba(212,175,55,0.3);
+        }
+
+        /* شبكة المنتجات */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--card-dark);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #242430;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            transition: 0.2s;
+        }
+        .card:hover { border-color: var(--gold); transform: translateY(-3px); }
+
+        .card-img-wrap {
+            width: 100%;
+            height: 185px;
+            position: relative;
+            background: #1a1a24;
+            border-bottom: 1px solid #242430;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
+        .tag { font-size: 0.7rem; color: var(--rose-gold); margin-bottom: 3px; font-weight: bold; }
+        .name { font-size: 0.98rem; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.3; }
+        .desc { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; flex-grow: 1; line-height: 1.35; }
+        .price { font-size: 0.85rem; font-weight: bold; color: var(--gold); margin-bottom: 10px; }
+
+        .order-btn {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: bold;
+        }
+
+        /* شريط معلومات المحل وزر واتساب */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--wa-green);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-badge">المتجر الإلكتروني المعتمد</div>
+        <h1>الرحيق للعطور والتجميل</h1>
+        <p>عطور أصلية، أدوات تجميل، عناية بالبشرة والشعر، وإكسسوارات</p>
+        <div class="location-tag">📍 المكلا - فـوة، المساكن (الشارع الثاني)</div>
+    </div>
+
+    <div class="container">
+        <!-- أزرار الأقسام -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterCategory('all', this)">كل المعروضات (6)</button>
+            <button class="tab-btn" onclick="filterCategory('perfumes', this)">عطور فاخرة</button>
+            <button class="tab-btn" onclick="filterCategory('skin', this)">عناية بالبشرة</button>
+            <button class="tab-btn" onclick="filterCategory('hair', this)">عناية بالشعر</button>
+            <button class="tab-btn" onclick="filterCategory('oils', this)">زيوت طبيعية</button>
+        </div>
+
+        <div class="grid">
+            <!-- 1. واقي شمس دياموند بيوتي -->
+            <div class="card" data-cat="skin">
+                <div class="card-img-wrap">
+                    <img src="p1.jpg" alt="واقي شمس دياموند بيوتي" class="card-img" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <span class="tag">حماية البشرة</span>
+                    <div class="name">واقي شمس دياموند بيوتي SPF 50+</div>
+                    <div class="desc">جل كريم حماية فائقة من الشمس، مضاد للمعان ومناسب للبشرة الحساسة مع لمسة جافة.</div>
+                    <div class="price">متوفر في المحل</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20سعر%20واقي%20شمس%20دياموند%20بيوتي" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                </div>
+            </div>
+
+            <!-- 2. عطر سديم -->
+            <div class="card" data-cat="perfumes">
+                <div class="card-img-wrap">
+                    <img src="p2.jpg" alt="عطر سديم" class="card-img" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <span class="tag">عطور فاخرة</span>
+                    <div class="name">عطر سديم الملكي (Sadeem)</div>
+                    <div class="desc">عطر مركز فاخر خالي من الكحول في زجاجة ملكية مذهبة وأنيقة مع علبة فخمة للإهداء.</div>
+                    <div class="price">متوفر في المحل</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20سعر%20عطر%20سديم" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                </div>
+            </div>
+
+            <!-- 3. لوشن يوسيرين -->
+            <div class="card" data-cat="skin">
+                <div class="card-img-wrap">
+                    <img src="p3.jpg" alt="لوشن يوسيرين" class="card-img" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <span class="tag">ترطيب طبي</span>
+                    <div class="name">لوشن يوسيرين للخشونة 500ml</div>
+                    <div class="desc">لوشن Eucerin الأصلي الغني باليوريا والسيراميد لتنعيم وتخفيف خشونة وجفاف البشرة بعمق.</div>
+                    <div class="price">متوفر في المحل</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20لوشن%20يوسيرين%20الاصلي" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                </div>
+            </div>
+
+            <!-- 4. معالج سورالي -->
+            <div class="card" data-cat="hair">
+                <div class="card-img-wrap">
+                    <img src="p4.jpg" alt="بروتين سورالي" class="card-img" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <span class="tag">معالجات الشعر</span>
+                    <div class="name">ثيرابي ليس سورالي 4 في 1 البرازيلي</div>
+                    <div class="desc">ماسك ومعالج احترافي لإصلاح وفرد الشعر وإزالة النفشة غني بزيت المكاديميا والبانثينول.</div>
+                    <div class="price">متوفر (1 كجم / 150 جم)</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20ثيرابي%20ليس%20سورالي" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                </div>
+            </div>
+
+            <!-- 5. زيوت ناو -->
+            <div class="card" data-cat="oils">
+                <div class="card-img-wrap">
+                    <img src="p5.jpg" alt="زيوت ناو" class="card-img" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <span class="tag">زيوت طبيعية 100%</span>
+                    <div class="name">مجموعة زيوت ناو الأمريكية (NOW)</div>
+                    <div class="desc">زيوت طبيعية نقية للعناية بالبشرة والشعر (زيت الورد، اللوز الحلو، جوز الهند، واللوز المر).</div>
+                    <div class="price">متوفر في المحل</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20زيوت%20ناو%20الطبيعية" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                </div>
+            </div>
+
+            <!-- 6. مثبت شاين فليكس -->
+            <div class="card" data-cat="hair">
+                <div class="card-img-wrap">
+                    <img src="p6.jpg" alt="مثبت شاين فليكس" class="card-img" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <span class="tag">تصفيف الشعر</span>
+                    <div class="name">مثبت الشعر الذهبي شاين فليكس</div>
+                    <div class="desc">سبراي Shineflex قوي لتثبيت التسريحات ومنح الشعر حجماً ولمعاناً ثابتاً يدوم طوال اليوم.</div>
+                    <div class="price">متوفر في المحل</div>
+                    <a href="https://wa.me/967781666239?text=السلام%20عليكم،%20ارغب%20بالاستفسار%20عن%20مثبت%20شاين%20فليكس" class="order-btn" target="_blank">طلب / استفسار واتساب</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر واتساب المحل الرسمي -->
+    <a href="https://wa.me/967781666239?text=مرحباً،%20تواصلت%20معكم%20عبر%20المتجر%20الإلكتروني%20لمحل%20الرحيق" class="wa-float" target="_blank">
+        💬 تواصل مع المحل واتساب
+    </a>
+
+    <!-- كود التبديل بين الأقسام -->
+    <script>
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
