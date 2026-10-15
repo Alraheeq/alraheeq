@@ -6,8 +6,8 @@
     <title>متجر الرحيق | للعطور والتجميل</title>
     <style>
         :root {
-            --bg-dark: #0d0d12;
-            --card-dark: #16161f;
+            --bg-dark: #0a0a0e;
+            --card-dark: #14141b;
             --gold: #d4af37;
             --rose: #e2a792;
             --text-light: #f5f5f5;
@@ -18,32 +18,34 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
         body { background: var(--bg-dark); color: var(--text-light); padding-bottom: 95px; }
 
+        /* الهيدر مع اللوجو الرسمي */
         .hero {
-            background: radial-gradient(circle at center, #26202e 0%, #0d0d12 100%);
+            background: radial-gradient(circle at center, #231e2b 0%, #0a0a0e 100%);
             border-bottom: 2px solid var(--gold);
-            padding: 30px 20px 20px;
+            padding: 30px 20px 22px;
             text-align: center;
             box-shadow: 0 4px 25px rgba(0,0,0,0.8);
         }
 
-        .hero-badge {
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--gold);
-            border: 1px solid var(--gold);
+        .logo-img {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            margin-bottom: 12px;
             display: inline-block;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-bottom: 8px;
         }
 
-        .hero h1 { font-size: 1.6rem; color: #fff; margin-bottom: 6px; }
-        .hero p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
-        .location-tag { color: var(--rose); font-size: 0.78rem; font-weight: 600; }
+        .hero h1 { font-size: 1.65rem; color: #fff; margin-bottom: 5px; }
+        .hero p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 6px; }
+        .location-tag { color: var(--gold); font-size: 0.8rem; font-weight: 600; }
 
         .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
 
+        /* أزرار التبويبات */
         .tabs {
             display: flex;
             gap: 8px;
@@ -54,9 +56,9 @@
         .tabs::-webkit-scrollbar { display: none; }
 
         .tab-btn {
-            background: #1c1c24;
+            background: #191922;
             color: var(--text-muted);
-            border: 1px solid #2b2b38;
+            border: 1px solid #282836;
             padding: 8px 16px;
             border-radius: 30px;
             font-size: 0.82rem;
@@ -92,9 +94,8 @@
 
         .card-img-wrap {
             width: 100%;
-            height: 190px;
-            position: relative;
-            background: #1a1a24;
+            height: 195px;
+            background: #191924;
             border-bottom: 1px solid #242430;
             overflow: hidden;
             display: flex;
@@ -148,7 +149,10 @@
 <body>
 
     <div class="hero">
-        <div class="hero-badge">معاينة المتجر الإلكتروني</div>
+        <!-- شعار الرحيق المعتمد -->
+        <div>
+            <img src="logo.png" alt="شعار الرحيق" class="logo-img" onerror="this.src='1000040179.png'">
+        </div>
         <h1>الرحيق للعطور والتجميل</h1>
         <p>عطور أصلية، أدوات تجميل، عناية بالبشرة والشعر، وإكسسوارات</p>
         <div class="location-tag">📍 المكلا - فـوة، المساكن (الشارع الثاني)</div>
@@ -167,7 +171,7 @@
             <!-- 1. واقي شمس دياموند بيوتي -->
             <div class="card" data-cat="skin">
                 <div class="card-img-wrap">
-                    <img src="p1.jpg" alt="واقي شمس دياموند بيوتي" class="card-img" onerror="tryNext(this, ['p1.jpeg', 'p1.png', 'p1.jpg.jpg'])">
+                    <img src="p1.jpg" alt="واقي شمس دياموند بيوتي" class="card-img" onerror="checkImg(this, 'p1')">
                 </div>
                 <div class="card-body">
                     <span class="tag">حماية البشرة</span>
@@ -181,7 +185,7 @@
             <!-- 2. عطر سديم -->
             <div class="card" data-cat="perfumes">
                 <div class="card-img-wrap">
-                    <img src="p2.jpg" alt="عطر سديم" class="card-img" onerror="tryNext(this, ['p2.jpeg', 'p2.png', 'p2.jpg.jpg'])">
+                    <img src="p2.jpg" alt="عطر سديم" class="card-img" onerror="checkImg(this, 'p2')">
                 </div>
                 <div class="card-body">
                     <span class="tag">عطور فاخرة</span>
@@ -195,7 +199,7 @@
             <!-- 3. لوشن يوسيرين -->
             <div class="card" data-cat="skin">
                 <div class="card-img-wrap">
-                    <img src="p3.jpg" alt="لوشن يوسيرين" class="card-img" onerror="tryNext(this, ['p3.jpeg', 'p3.png', 'p3.jpg.jpg'])">
+                    <img src="p3.jpg" alt="لوشن يوسيرين" class="card-img" onerror="checkImg(this, 'p3')">
                 </div>
                 <div class="card-body">
                     <span class="tag">ترطيب طبي</span>
@@ -209,7 +213,7 @@
             <!-- 4. معالج سورالي -->
             <div class="card" data-cat="hair">
                 <div class="card-img-wrap">
-                    <img src="p4.jpg" alt="بروتين سورالي" class="card-img" onerror="tryNext(this, ['p4.jpeg', 'p4.png', 'p4.jpg.jpg'])">
+                    <img src="p4.jpg" alt="بروتين سورالي" class="card-img" onerror="checkImg(this, 'p4')">
                 </div>
                 <div class="card-body">
                     <span class="tag">معالجات الشعر</span>
@@ -223,7 +227,7 @@
             <!-- 5. زيوت ناو -->
             <div class="card" data-cat="oils">
                 <div class="card-img-wrap">
-                    <img src="p5.jpg" alt="زيوت ناو" class="card-img" onerror="tryNext(this, ['p5.jpeg', 'p5.png', 'p5.jpg.jpg'])">
+                    <img src="p5.jpg" alt="زيوت ناو" class="card-img" onerror="checkImg(this, 'p5')">
                 </div>
                 <div class="card-body">
                     <span class="tag">زيوت طبيعية 100%</span>
@@ -237,7 +241,7 @@
             <!-- 6. مثبت شاين فليكس -->
             <div class="card" data-cat="hair">
                 <div class="card-img-wrap">
-                    <img src="p6.jpg" alt="مثبت شاين فليكس" class="card-img" onerror="tryNext(this, ['p6.jpeg', 'p6.png', 'p6.jpg.jpg'])">
+                    <img src="p6.jpg" alt="مثبت شاين فليكس" class="card-img" onerror="checkImg(this, 'p6')">
                 </div>
                 <div class="card-body">
                     <span class="tag">تصفيف الشعر</span>
@@ -256,13 +260,12 @@
     </a>
 
     <script>
-        function tryNext(img, exts) {
-            let tried = parseInt(img.getAttribute('data-idx') || '0');
-            if (tried < exts.length) {
-                img.setAttribute('data-idx', (tried + 1).toString());
-                img.src = exts[tried];
-            } else {
-                img.style.display = 'none';
+        function checkImg(img, baseName) {
+            const currentSrc = img.src;
+            if (currentSrc.includes(baseName + '.jpg') && !currentSrc.includes('.jpg.jpg')) {
+                img.src = baseName + '.jpg.jpg';
+            } else if (currentSrc.includes('.jpg.jpg')) {
+                img.src = baseName + '.jpeg';
             }
         }
 
